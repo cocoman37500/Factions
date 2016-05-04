@@ -57,10 +57,10 @@ public abstract class CmdFactionsAccessAbstract extends FactionsCommand
 		title = Txt.titleize(title);
 		message(title);
 		
-		msg("<k>Host Faction: %s", hostFaction.describeTo(msender, true));
-		msg("<k>Host Faction Allowed: %s", ta.isHostFactionAllowed() ? Txt.parse("<lime>TRUE") : Txt.parse("<rose>FALSE"));
-		msg("<k>Granted Players: %s", describeRelationParticipators(ta.getGrantedMPlayers(), msender));
-		msg("<k>Granted Factions: %s", describeRelationParticipators(ta.getGrantedFactions(), msender));
+		msg("<k>Faction Hebergeuse: %s", hostFaction.describeTo(msender, true));
+		msg("<k>Faction Hebergeuse Autorisé: %s", ta.isHostFactionAllowed() ? Txt.parse("<lime>TRUE") : Txt.parse("<rose>FALSE"));
+		msg("<k>Joueurs Récompensés: %s", describeRelationParticipators(ta.getGrantedMPlayers(), msender));
+		msg("<k>Factions Récomensées: %s", describeRelationParticipators(ta.getGrantedFactions(), msender));
 	}
 	
 	public static String describeRelationParticipators(Collection<? extends RelationParticipator> relationParticipators, RelationParticipator observer)
