@@ -50,7 +50,7 @@ public class CmdFactionsInviteAdd extends FactionsCommand
 			// Already member?
 			if (mplayer.getFaction() == msenderFaction)
 			{
-				msg("%s<i> is already a member of %s<i>.", mplayer.getName(), msenderFaction.getName());
+				msg("%s<i> est déjà un membre de %s<i>.", mplayer.getName(), msenderFaction.getName());
 				continue;
 			}
 			
@@ -66,8 +66,8 @@ public class CmdFactionsInviteAdd extends FactionsCommand
 				isInvited = event.isNewInvited();
 				
 				// Inform
-				mplayer.msg("%s<i> invited you to %s<i>.", msender.describeTo(mplayer, true), msenderFaction.describeTo(mplayer));
-				msenderFaction.msg("%s<i> invited %s<i> to your faction.", msender.describeTo(msenderFaction, true), mplayer.describeTo(msenderFaction));
+				mplayer.msg("%s<i> vous a invité(e) à rejoindre la faction %s<i>.", msender.describeTo(mplayer, true), msenderFaction.describeTo(mplayer));
+				msenderFaction.msg("%s<i> a invité(e) %s<i> dans votre faction.", msender.describeTo(msenderFaction, true), mplayer.describeTo(msenderFaction));
 				
 				// Apply
 				msenderFaction.setInvited(mplayer, true);
@@ -77,15 +77,15 @@ public class CmdFactionsInviteAdd extends FactionsCommand
 			{
 				// Mson
 				String command = CmdFactions.get().cmdFactionsInvite.cmdFactionsInviteRemove.getCommandLine(mplayer.getName());
-				String tooltip = Txt.parse("<i>Click to <c>%s<i>.", command);
+				String tooltip = Txt.parse("<i>Clique sur <c>%s<i>.", command);
 				
 				Mson remove = Mson.mson(
-					mson("You might want to remove him. ").color(ChatColor.YELLOW), 
-					mson("Click to " + command).color(ChatColor.RED).tooltip(tooltip).suggest(command)
+					mson("Vous voudrez peut-être le retirer. ").color(ChatColor.YELLOW), 
+					mson("Clique sur " + command).color(ChatColor.RED).tooltip(tooltip).suggest(command)
 				);
 				
 				// Inform
-				msg("%s <i>is already invited to %s<i>.", mplayer.getName(), msenderFaction.getName());
+				msg("%s <i>est déjà invité(e) à rejoindre %s<i>.", mplayer.getName(), msenderFaction.getName());
 				message(remove);
 			}
 		}
