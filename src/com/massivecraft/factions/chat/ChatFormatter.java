@@ -46,7 +46,7 @@ public class ChatFormatter
 		if (id == null) throw new NullPointerException("tag id");
 		if (!id.equals(id.toLowerCase()))
 		{
-			throw new IllegalArgumentException("tag id must be lowercase");
+			throw new IllegalArgumentException("le tag id doit être en minuscule");
 		}
 		
 		ChatTag current = idToTag.get(id);
@@ -79,7 +79,7 @@ public class ChatFormatter
 		if (id == null) throw new NullPointerException("modifier id");
 		if (!id.equals(id.toLowerCase()))
 		{
-			throw new IllegalArgumentException("modifier id must be lowercase");
+			throw new IllegalArgumentException("l'id modifiée doit être en minuscule");
 		}
 		
 		ChatModifier current = idToModifier.get(id);
