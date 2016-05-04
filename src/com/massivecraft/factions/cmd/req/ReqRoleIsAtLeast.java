@@ -43,7 +43,7 @@ public class ReqRoleIsAtLeast extends RequirementAbstract
 	@Override
 	public String createErrorMessage(CommandSender sender, MassiveCommand command)
 	{
-		return Txt.parse("<b>You must be <h>%s <b>or higher to "+(command == null ? "do that" : command.getDesc())+".", Txt.getNicedEnum(this.rel));
+		return Txt.parse("<b>Vous devez être <h>%s <b>ou plus pour "+(command == null ? "faire ça" : command.getDesc())+".", Txt.getNicedEnum(this.rel));
 	}
 	
 }
