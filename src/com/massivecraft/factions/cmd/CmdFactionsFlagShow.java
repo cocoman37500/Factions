@@ -46,7 +46,7 @@ public class CmdFactionsFlagShow extends FactionsCommand
 		
 		// Create messages
 		List<Object> messages = new ArrayList<>();
-		messages.add(Txt.titleize("Flag for " + faction.describeTo(msender, true)));
+		messages.add(Txt.titleize("Flag pour " + faction.describeTo(msender, true)));
 		for (MFlag mflag : mflags)
 		{
 			messages.add(mflag.getStateDesc(faction.getFlag(mflag), true, true, true, true, true));
