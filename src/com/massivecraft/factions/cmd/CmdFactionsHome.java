@@ -53,25 +53,25 @@ public class CmdFactionsHome extends FactionsCommandHome
 	{
 		if ( ! MConf.get().homesTeleportCommandEnabled)
 		{
-			msender.msg("<b>Sorry, the ability to teleport to Faction homes is disabled on this server.");
+			msender.msg("<b>Désolé, la capacité à se téléporter à l'home de la faction est désactivé sur le serveur.");
 			return;
 		}
 		
 		// Args
 		Faction faction = this.readArg(msenderFaction);
 		PS home = faction.getHome();
-		String homeDesc = "home for " + faction.describeTo(msender, false);
+		String homeDesc = "home pour " + faction.describeTo(msender, false);
 		
 		// Any and MPerm
 		if ( ! MPerm.getPermHome().has(msender, faction, true)) return;
 		
 		if (home == null)
 		{
-			msender.msg("<b>%s <b>does not have a home.", faction.describeTo(msender, true));
+			msender.msg("<b>%s <b>n'a pas de home.", faction.describeTo(msender, true));
 			
 			if (MPerm.getPermSethome().has(msender, faction, false))
 			{
-				msender.msg("<i>You should:");
+				msender.msg("<i>Vous devez:");
 				msender.message(CmdFactions.get().cmdFactionsSethome.getTemplate());
 			}
 			
@@ -80,13 +80,13 @@ public class CmdFactionsHome extends FactionsCommandHome
 		
 		if ( ! MConf.get().homesTeleportAllowedFromEnemyTerritory && msender.isInEnemyTerritory())
 		{
-			msender.msg("<b>You cannot teleport to %s <b>while in the territory of an enemy faction.", homeDesc);
+			msender.msg("<b>Vous ne pouvez téléporter sur %s <b>tant qu'il se trouve sur le territoire d'une faction.", homeDesc);
 			return;
 		}
 		
 		if ( ! MConf.get().homesTeleportAllowedFromDifferentWorld && !me.getWorld().getName().equalsIgnoreCase(home.getWorld()))
 		{
-			msender.msg("<b>You cannot teleport to %s <b>while in a different world.", homeDesc);
+			msender.msg("<b>Vous ne pouvez téléporter sur %s <b>tant qu'il se trouve dans un monde différent.", homeDesc);
 			return;
 		}
 		
@@ -138,7 +138,7 @@ public class CmdFactionsHome extends FactionsCommandHome
 				if (dx > max || dy > max || dz > max)
 					continue;
 
-				msender.msg("<b>You cannot teleport to %s <b>while an enemy is within %f blocks of you.", homeDesc, MConf.get().homesTeleportAllowedEnemyDistance);
+				msender.msg("<b>Vous ne pouvez téléporter sur %s <b>tant qu'un ennemi se trouve à moins de %f blocs de vous.", homeDesc, MConf.get().homesTeleportAllowedEnemyDistance);
 				return;
 			}
 		}
