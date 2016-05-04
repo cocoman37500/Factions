@@ -35,7 +35,7 @@ public class ReqHasntFaction extends RequirementAbstract
 	@Override
 	public String createErrorMessage(CommandSender sender, MassiveCommand command)
 	{
-		return Txt.parse("<b>You must leave your current faction before you "+(command == null ? "do that" : command.getDesc())+".");
+		return Txt.parse("<b>Vous devez quitter votre faction actuelle avant de "+(command == null ? "faire ça" : command.getDesc())+".");
 	}
 	
 }
