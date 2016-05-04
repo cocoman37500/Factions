@@ -53,17 +53,17 @@ public class CmdFactionsInviteList extends FactionsCommand
 		
 		// Pager Create
 		final List<MPlayer> mplayers = faction.getInvitedMPlayers();
-		final Pager<MPlayer> pager = new Pager<MPlayer>(this, "Invited Players List", page, mplayers, new Stringifier<MPlayer>(){
+		final Pager<MPlayer> pager = new Pager<MPlayer>(this, "Liste des joueurs invités", page, mplayers, new Stringifier<MPlayer>(){
 			public String toString(MPlayer target, int index)
 			{
 				// TODO: Madus would like to implement this in MPlayer
 				String targetName = target.getDisplayName(msender);
-				String isAre = target == msender ? "are" : "is";
+				String isAre = target == msender ? "sont" : "est";
 				Rel targetRank = target.getRole();
 				Faction targetFaction = target.getFaction();
-				String theAan = targetRank == Rel.LEADER ? "the" : Txt.aan(targetRank.name());
+				String theAan = targetRank == Rel.LEADER ? "le" : Txt.aan(targetRank.name());
 				String rankName = Txt.getNicedEnum(targetRank).toLowerCase();
-				String ofIn = targetRank == Rel.LEADER ? "of" : "in";
+				String ofIn = targetRank == Rel.LEADER ? "de" : "dans";
 				String factionName = targetFaction.describeTo(msender, true);
 				if (targetFaction == msenderFaction)
 				{
