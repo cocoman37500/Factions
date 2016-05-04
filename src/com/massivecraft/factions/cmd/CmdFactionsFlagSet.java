@@ -49,7 +49,7 @@ public class CmdFactionsFlagSet extends FactionsCommand
 		// Is this flag editable?
 		if (!msender.isOverriding() && ! flag.isEditable())
 		{
-			msg("<b>The flag <h>%s <b>is not editable.", flag.getName());
+			msg("<b>Le flag <h>%s <b>n'est pas modifiable.", flag.getName());
 			return;
 		}
 		
@@ -62,7 +62,7 @@ public class CmdFactionsFlagSet extends FactionsCommand
 		// No change 
 		if (faction.getFlag(flag) == value)
 		{
-			msg("%s <i>already has %s <i>set to %s<i>.", faction.describeTo(msender), flag.getStateDesc(value, false, true, true, false, true), flag.getStateDesc(value, true, true, false, false, false));
+			msg("%s <i>a déjà %s <i>défini sur %s<i>.", faction.describeTo(msender), flag.getStateDesc(value, false, true, true, false, true), flag.getStateDesc(value, true, true, false, false, false));
 			return;
 		}
 		
@@ -74,10 +74,10 @@ public class CmdFactionsFlagSet extends FactionsCommand
 		if (msender.getFaction() != faction)
 		{
 			// Send message to sender
-			msg("<h>%s <i>set a flag for <h>%s<i>.", msender.describeTo(msender, true), faction.describeTo(msender, true));
+			msg("<h>%s <i>a modifié(e) un flag pour <h>%s<i>.", msender.describeTo(msender, true), faction.describeTo(msender, true));
 			message(stateInfo);
 		}
-		faction.msg("<h>%s <i>set a flag for <h>%s<i>.", msender.describeTo(faction, true), faction.describeTo(faction, true));
+		faction.msg("<h>%s <i>a modifié(e) un flag pour <h>%s<i>.", msender.describeTo(faction, true), faction.describeTo(faction, true));
 		faction.sendMessage(stateInfo);
 	}
 	
